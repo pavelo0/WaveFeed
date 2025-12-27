@@ -1,14 +1,26 @@
-import { Link } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { logout } from '../store/slices/authSlice';
 
 export const Header = () => {
 	const [isLogin, setIsLogin] = useState<boolean>(false);
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const handleLogin = () => {
+		navigate({ to: '/login' });
+		setIsLogin(true);
+	};
+	const handleRegister = () => {
+		navigate({ to: '/register' });
 		setIsLogin(true);
 	};
 
 	const handleLogout = () => {
+		dispatch(logout());
+		navigate({ to: '/' });
+
 		setIsLogin(false);
 	};
 
@@ -38,6 +50,7 @@ export const Header = () => {
 			{!isLogin && (
 				<>
 					<button onClick={handleLogin}>Login</button>
+					<button onClick={handleRegister}>Register</button>
 				</>
 			)}
 			{isLogin && <button onClick={handleLogout}>Logout</button>}
