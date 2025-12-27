@@ -39,3 +39,14 @@ export const fetchPostById = async (id: string): Promise<Post> => {
 	const data = await response.json();
 	return data;
 };
+
+export const fetchPostsByTag = async (tag: string): Promise<Post[]> => {
+	const response = await fetch(`https://dummyjson.com/posts/tag/${tag}`);
+
+	if (!response.ok) {
+		throw new Error('Some Error Occurred');
+	}
+
+	const data = await response.json();
+	return data.posts;
+};

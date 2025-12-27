@@ -4,5 +4,24 @@ import { tanstackRouterGenerator } from '@tanstack/router-plugin/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [react(), tanstackRouterGenerator()],
+    plugins: [
+        react(),
+        tanstackRouterGenerator({
+            // Включаем автогенерацию шаблонов для новых маршрутов
+            enableRouteGeneration: true,
+            // Кастомный шаблон для новых маршрутов
+            customScaffolding: {
+                routeTemplate: `import { createFileRoute } from '@tanstack/react-router'
+
+export const Route = createFileRoute('{{fullPath}}')({
+\tcomponent: RouteComponent
+})
+
+function RouteComponent() {
+\treturn <div>{{routeName}} Page</div>
+}
+`,
+            },
+        }),
+    ],
 });
