@@ -52,7 +52,7 @@ function PostDetailPage() {
 						clipRule="evenodd"
 					/>
 				</svg>
-				Назад
+				Back
 			</button>
 			<h1 className="text-3xl font-bold mb-4">{post.title}</h1>
 			<p className="mb-4">{post.body}</p>

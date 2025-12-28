@@ -1,59 +1,122 @@
 import { Link, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../store';
 import { logout } from '../store/slices/authSlice';
+import { Button } from './ui/button';
 
 export const Header = () => {
-	const [isLogin, setIsLogin] = useState<boolean>(false);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const isAuthenticated = useSelector(
+		(state: RootState) => state.auth.isAuthenticated
+	);
 
 	const handleLogin = () => {
 		navigate({ to: '/login' });
-		setIsLogin(true);
 	};
+
 	const handleRegister = () => {
 		navigate({ to: '/register' });
-		setIsLogin(true);
 	};
 
 	const handleLogout = () => {
 		dispatch(logout());
 		navigate({ to: '/' });
-
-		setIsLogin(false);
 	};
 
 	return (
-		<header>
-			<h1>DevFeed</h1>
+		<header className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg border-b border-blue-900/20">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="flex items-center justify-between h-16">
+					<div className="flex items-center space-x-8">
+						<Link
+							to="/"
+							className="text-2xl font-bold text-white hover:text-blue-100 transition-colors flex items-center gap-2"
+						>
+							<span className="bg-white/20 px-3 py-1 rounded-lg">🌊</span>
+							WaveFeed
+						</Link>
 
-			<nav>
-				<ul>
-					<li>
-						<Link to="/">Home</Link>
-					</li>
-					<li>
-						<Link to="/about">About</Link>
-					</li>
-					<li>
-						<Link to="/contacts">Contacts</Link>
-					</li>
-					{isLogin && (
-						<li>
-							<Link to="/profile">Profile</Link>
-						</li>
-					)}
-				</ul>
-			</nav>
+						<nav className="hidden md:flex space-x-1">
+							<Link
+								to="/"
+								className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-md text-sm font-medium transition-all"
+							>
+								Home
+							</Link>
+							<Link
+								to="/about"
+								className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-md text-sm font-medium transition-all"
+							>
+								About
+							</Link>
+							<Link
+								to="/contacts"
+								className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-md text-sm font-medium transition-all"
+							>
+								Contacts
+							</Link>
+							{isAuthenticated && (
+								<Link
+									to="/profile"
+									className="text-white/90 hover:text-white hover:bg-white/10 px-4 py-2 rounded-md text-sm font-medium transition-all"
+								>
+									Profile
+								</Link>
+							)}
+						</nav>
+					</div>
 
-			{!isLogin && (
-				<>
-					<button onClick={handleLogin}>Login</button>
-					<button onClick={handleRegister}>Register</button>
-				</>
-			)}
-			{isLogin && <button onClick={handleLogout}>Logout</button>}
+					<div className="flex items-center space-x-3">
+						{!isAuthenticated ? (
+							<>
+								<Button
+									onClick={handleLogin}
+									variant="outline"
+									className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white"
+								>
+									Login
+								</Button>
+								<Button
+									onClick={handleRegister}
+									className="bg-white text-blue-600 hover:bg-blue-50 shadow-md"
+								>
+									Register
+								</Button>
+							</>
+						) : (
+							<Button
+								onClick={handleLogout}
+								variant="outline"
+								className="bg-white/10 border-white/30 text-white hover:bg-red-400 hover:border-red-500 hover:text-white shadow-md transition-all duration-200 group"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									className="mr-2 group-hover:translate-x-0.5 transition-transform"
+								>
+									<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+									<polyline points="16 17 21 12 16 7" />
+									<line
+										x1="21"
+										y1="12"
+										x2="9"
+										y2="12"
+									/>
+								</svg>
+								Logout
+							</Button>
+						)}
+					</div>
+				</div>
+			</div>
 		</header>
 	);
 };
