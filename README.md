@@ -1,175 +1,151 @@
-# DevFeed - TeamBlog MVP
+# WaveFeed - TeamBlog MVP
 
-Социальная лента для разработчиков на современном стеке React + TypeScript + TanStack.
+A social feed for developers built with modern React + TypeScript + TanStack
+stack.
 
-> ⚠️ **Проект в активной разработке** - функциональность постепенно добавляется.
+## 📖 Description
 
-## 📖 Описание
+WaveFeed is a simplified social feed (MVP) for developers, demonstrating work
+with modern technologies:
 
-DevFeed - это упрощенная социальная лента (MVP) для разработчиков, демонстрирующая работу с современными технологиями:
-- **TypeScript** - строгая типизация
-- **TanStack Router** - типобезопасная маршрутизация
-- **TanStack Query** - управление серверным состоянием
-- **Tailwind CSS** - utility-first стилизация
-- **WebSocket** - чат в реальном времени
+- **TypeScript** - strict typing
+- **TanStack Router** - type-safe routing
+- **TanStack Query** - server state management
+- **Redux Toolkit** - client state management
+- **ShadCN UI** - component library built on Tailwind CSS
+- **Tailwind CSS** - utility-first styling (used by ShadCN UI)
+- **WebSocket** - real-time chat (planned)
 
-## 🛠️ Технологический стек
+## 🛠️ Tech Stack
 
-- **React 19.2** - UI библиотека
-- **TypeScript 5.9** - типизация
-- **Vite 7.2** - сборщик и dev-сервер
-- **TanStack Router 1.141** - маршрутизация
-- **TanStack Query 5.90** - работа с API
-- **Tailwind CSS 4.1** - стилизация
-- **Vitest 4.0** - тестирование
+- **React 19.2** - UI library
+- **TypeScript 5.9** - typing
+- **Vite 7.2** - build tool and dev server
+- **TanStack Router 1.141** - routing
+- **TanStack Query 5.90** - API management
+- **Redux Toolkit 2.11** - state management
+- **React Redux 9.2** - React bindings for Redux
+- **ShadCN UI** - component library
+- **Tailwind CSS 4.1** - styling (used by ShadCN UI)
+- **Vitest 4.0** - testing
 
-## 📁 Структура проекта
+## 📁 Project Structure
 
 ```
-DevFeed/
+WaveFeed/
 ├── src/
-│   ├── routes/          # TanStack Router маршруты
-│   ├── components/      # React компоненты
-│   ├── hooks/           # Кастомные хуки
-│   ├── lib/             # Утилиты и API клиенты
-│   ├── types/           # TypeScript типы
-│   └── test/            # Тесты
-├── public/              # Статические файлы
+│   ├── routes/          # TanStack Router routes
+│   │   ├── __root.tsx   # Root layout
+│   │   ├── index.tsx    # Home page
+│   │   ├── login.tsx    # Login page
+│   │   ├── register.tsx # Register page
+│   │   └── ...
+│   ├── component/       # React components
+│   │   ├── Login.tsx
+│   │   ├── Register.tsx
+│   │   ├── Post.tsx
+│   │   └── ...
+│   ├── pages/           # Page components
+│   │   ├── LoginPage.tsx
+│   │   ├── RegisterPage.tsx
+│   │   └── ...
+│   ├── store/          # Redux store
+│   │   ├── index.ts    # Store configuration
+│   │   └── slices/     # Redux slices
+│   │       └── authSlice.ts
+│   ├── lib/            # Utilities and API clients
+│   │   ├── api.ts      # API functions
+│   │   └── queryClient.ts
+│   ├── hooks/          # Custom hooks
+│   ├── types/          # TypeScript types
+│   ├── main.tsx        # Application entry point
+│   └── routeTree.gen.ts # Auto-generated routes
+├── public/             # Static files
 └── package.json
 ```
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### Установка зависимостей
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Запуск dev-сервера
+### Run Dev Server
 
 ```bash
 npm run dev
 ```
 
-Приложение будет доступно по адресу: `http://localhost:5173`
+The application will be available at: `http://localhost:5173`
 
-### Сборка для продакшена
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-### Превью продакшен сборки
+### Preview Production Build
 
 ```bash
 npm run preview
 ```
 
-### Линтинг
+### Linting
 
 ```bash
 npm run lint
 ```
 
-### Тесты
+### Tests
 
 ```bash
 npm test
 ```
 
-## 📝 Git конвенция коммитов
+## 📝 Git Commit Convention
 
-Проект использует [Conventional Commits](https://www.conventionalcommits.org/) для единообразия истории коммитов.
+The project uses commit prefixes in square brackets to maintain consistency in
+commit history.
 
-### Формат коммита
+### Commit Format
 
-```
-<type>(<scope>): <subject>
+All commits should follow the format: `[type] message`
 
-<body>
+### Commit Types
 
-<footer>
-```
+- `[feat]` - new feature
+- `[fix]` - bug fix
+- `[docs]` - documentation changes
+- `[style]` - code style changes (formatting, missing semicolons, etc.)
+- `[refactor]` - code refactoring
+- `[test]` - adding or updating tests
+- `[chore]` - build tasks, configuration updates, etc.
+- `[perf]` - performance improvements
+- `[ci]` - CI/CD changes
 
-### Типы коммитов
-
-- `feat` - новая функциональность
-- `fix` - исправление бага
-- `docs` - изменения в документации
-- `style` - форматирование, отсутствующие точки с запятой и т.д.
-- `refactor` - рефакторинг кода
-- `test` - добавление тестов
-- `chore` - обновление задач сборки, настройки и т.д.
-- `perf` - улучшение производительности
-- `ci` - изменения в CI/CD
-
-### Примеры
+### Examples
 
 ```bash
-# Новая функциональность
-feat(router): добавить маршрут для страницы постов
+# New feature
+[feat] Add route for posts page
 
-# Исправление бага
-fix(query): исправить кеширование данных пользователей
+# Bug fix
+[fix] Fix user data caching issue
 
-# Документация
-docs(readme): обновить инструкцию по запуску
+# Documentation
+[docs] Update README with setup instructions
 
-# Стили
-style(components): форматировать код в PostCard
+# Code style
+[style] Format code in PostCard component
 
-# Рефакторинг
-refactor(api): вынести логику запросов в отдельный модуль
+# Refactoring
+[refactor] Extract request logic to separate module
 
-# Тесты
-test(components): добавить unit тесты для PostCard
+# Tests
+[test] Add unit tests for PostCard component
 
-# Настройка
-chore(deps): обновить зависимости
+# Configuration
+[chore] Update dependencies
 ```
-
-### Scope (опционально)
-
-Область изменений:
-- `router` - маршрутизация
-- `query` - TanStack Query
-- `components` - компоненты
-- `api` - API клиент
-- `types` - типы TypeScript
-- `styles` - стили
-- `config` - конфигурация
-
-## 📋 Планируемая функциональность
-
-- [x] Настройка проекта и базовой конфигурации
-- [ ] Маршрутизация (TanStack Router)
-  - [ ] Лента постов (`/`)
-  - [ ] Детальный пост (`/posts/:id`)
-  - [ ] Список авторов (`/users`)
-  - [ ] Чат (`/chat`)
-- [ ] Работа с API (TanStack Query)
-  - [ ] Загрузка постов
-  - [ ] Загрузка комментариев
-  - [ ] Загрузка пользователей
-- [ ] WebSocket чат
-- [ ] Тестирование
-  - [ ] Unit тесты
-  - [ ] Модульные тесты
-  - [ ] Snapshot тесты
-
-## 🔗 Полезные ссылки
-
-- [TypeScript Documentation](https://www.typescriptlang.org/)
-- [TanStack Router](https://tanstack.com/router/latest)
-- [TanStack Query](https://tanstack.com/query/latest)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Vite](https://vite.dev/)
-
-## 📄 Лицензия
-
-MIT
-
----
-
-**Статус проекта:** 🚧 В разработке
