@@ -1,3 +1,4 @@
+import { useAuthGuard } from '@/hooks/useAuthGuard';
 import { useNavigate } from '@tanstack/react-router';
 import { useState } from 'react';
 import type { Post as PostType } from '../lib/api';
@@ -11,22 +12,40 @@ const Post = ({ post }: PostProps) => {
 	const navigate = useNavigate();
 	const [isFavorite, setIsFavorite] = useState(false);
 	const { id, title, body, tags, reactions, views } = post;
+	const isAuth = useAuthGuard();
 
 	const handleSelectTag = (e: React.MouseEvent, tag: string) => {
 		e.stopPropagation();
+		if (!isAuth) {
+			navigate({ to: '/login' });
+			return;
+		}
+
 		navigate({ to: '/posts/tag/$tag', params: { tag: tag } });
 	};
 
 	const handlePostClick = () => {
+		if (!isAuth) {
+			navigate({ to: '/login' });
+			return;
+		}
 		navigate({ to: '/posts/$id', params: { id: String(id) } });
 	};
 
 	const handleFavorite = (e: React.MouseEvent) => {
+		if (!isAuth) {
+			navigate({ to: '/login' });
+			return;
+		}
 		e.stopPropagation();
 		setIsFavorite(!isFavorite);
 	};
 
 	const handleComments = (e: React.MouseEvent) => {
+		if (!isAuth) {
+			navigate({ to: '/login' });
+			return;
+		}
 		e.stopPropagation();
 		navigate({ to: '/posts/$id', params: { id: String(id) } });
 	};
