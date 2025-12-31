@@ -16,7 +16,6 @@ const Post = ({ post }: PostProps) => {
 	const { id, title, body, tags, reactions, views } = post;
 	const isAuth = useAuthGuard();
 
-	// Получаем состояние избранного из Redux
 	const favorites = useSelector((state: RootState) => state.auth.favorites);
 	const isFavorite = favorites.includes(id);
 

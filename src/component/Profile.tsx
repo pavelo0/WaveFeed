@@ -8,13 +8,11 @@ const Profile = () => {
 	const currentUser = useSelector((state: RootState) => state.auth.currentUser);
 	const favorites = useSelector((state: RootState) => state.auth.favorites);
 
-	// Загружаем все посты
 	const { data: allPosts } = useQuery({
 		queryKey: ['posts'],
 		queryFn: fetchPosts
 	});
 
-	// Фильтруем избранные посты
 	const favoritePosts =
 		allPosts?.filter(post => favorites.includes(post.id)) || [];
 
@@ -50,7 +48,6 @@ const Profile = () => {
 					</div>
 				</div>
 
-				{/* Избранные посты */}
 				<div>
 					<h2 className="text-2xl font-bold mb-4">
 						Favorite Posts ({favoritePosts.length})

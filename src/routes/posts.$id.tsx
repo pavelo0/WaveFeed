@@ -25,7 +25,6 @@ function PostDetailPage() {
 	const postId = Number(id);
 	const showComments = commentsOpenFromUrl || false;
 
-	// Получаем состояние избранного из Redux
 	const favorites = useSelector((state: RootState) => state.auth.favorites);
 	const isFavorite = favorites.includes(postId);
 
