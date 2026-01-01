@@ -32,14 +32,26 @@ const initialState: AuthState = {
 	favorites: []
 };
 
+const loadStateFrimStorage = () => {
+	try {
+		const serializedState = localStorage.getItem('wavefeed_auth');
+		return serializedState === null
+			? initialState
+			: JSON.parse(serializedState);
+	} catch (e) {
+		console.log('Error while parsing: ', e);
+		return initialState;
+	}
+};
+
 export const authSlice = createSlice({
 	name: 'auth',
-	initialState,
+	initialState: loadStateFrimStorage(),
 
 	reducers: {
 		register: (state, action: PayloadAction<RegisterData>) => {
 			const existingUser = state.users.find(
-				user => user.email === action.payload.email
+				(user: LocalUser) => user.email === action.payload.email
 			);
 
 			if (!existingUser) {
@@ -59,7 +71,7 @@ export const authSlice = createSlice({
 
 		login: (state, action: PayloadAction<LoginData>) => {
 			const user = state.users.find(
-				user => user.email === action.payload.email
+				(user: LocalUser) => user.email === action.payload.email
 			);
 
 			if (user && user.password === action.payload.password) {
