@@ -7,25 +7,25 @@ export const Route = createFileRoute('/about')({
 
 function RouteComponent() {
 	return (
-		<div className="min-h-full bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-12">
+		<div className="min-h-full bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-6 sm:py-12">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold text-gray-900 mb-4">
+				<div className="text-center mb-8 sm:mb-12">
+					<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
 						About WaveFeed
 					</h1>
-					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
+					<p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
 						A modern social feed platform for developers to share ideas, connect,
 						and grow together.
 					</p>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8 mb-12">
+				<div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
 					<Card>
-						<CardContent className="p-6">
-						<div className="flex items-center gap-3 mb-4">
-							<div className="p-3 bg-blue-100 rounded-lg">
+						<CardContent className="p-4 sm:p-6">
+						<div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+							<div className="p-2 sm:p-3 bg-blue-100 rounded-lg flex-shrink-0">
 								<svg
-									className="w-6 h-6 text-blue-600"
+									className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -38,9 +38,9 @@ function RouteComponent() {
 									/>
 								</svg>
 							</div>
-							<h2 className="text-2xl font-bold text-gray-900">Fast</h2>
+							<h2 className="text-xl sm:text-2xl font-bold text-gray-900">Fast</h2>
 						</div>
-						<p className="text-gray-600">
+						<p className="text-sm sm:text-base text-gray-600">
 							Built with modern technologies for lightning-fast performance and
 							seamless user experience.
 						</p>
@@ -48,11 +48,11 @@ function RouteComponent() {
 					</Card>
 
 					<Card>
-						<CardContent className="p-6">
-						<div className="flex items-center gap-3 mb-4">
-							<div className="p-3 bg-green-100 rounded-lg">
+						<CardContent className="p-4 sm:p-6">
+						<div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+							<div className="p-2 sm:p-3 bg-green-100 rounded-lg flex-shrink-0">
 								<svg
-									className="w-6 h-6 text-green-600"
+									className="w-5 h-5 sm:w-6 sm:h-6 text-green-600"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -65,9 +65,9 @@ function RouteComponent() {
 									/>
 								</svg>
 							</div>
-							<h2 className="text-2xl font-bold text-gray-900">Secure</h2>
+							<h2 className="text-xl sm:text-2xl font-bold text-gray-900">Secure</h2>
 						</div>
-						<p className="text-gray-600">
+						<p className="text-sm sm:text-base text-gray-600">
 							Your data is protected with industry-standard security practices
 							and encryption.
 						</p>
@@ -75,11 +75,11 @@ function RouteComponent() {
 					</Card>
 
 					<Card>
-						<CardContent className="p-6">
-						<div className="flex items-center gap-3 mb-4">
-							<div className="p-3 bg-purple-100 rounded-lg">
+						<CardContent className="p-4 sm:p-6">
+						<div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+							<div className="p-2 sm:p-3 bg-purple-100 rounded-lg flex-shrink-0">
 								<svg
-									className="w-6 h-6 text-purple-600"
+									className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -92,9 +92,9 @@ function RouteComponent() {
 									/>
 								</svg>
 							</div>
-							<h2 className="text-2xl font-bold text-gray-900">Community</h2>
+							<h2 className="text-xl sm:text-2xl font-bold text-gray-900">Community</h2>
 						</div>
-						<p className="text-gray-600">
+						<p className="text-sm sm:text-base text-gray-600">
 							Connect with developers worldwide, share knowledge, and build
 							amazing projects together.
 						</p>
@@ -102,11 +102,11 @@ function RouteComponent() {
 					</Card>
 
 					<Card>
-						<CardContent className="p-6">
-						<div className="flex items-center gap-3 mb-4">
-							<div className="p-3 bg-orange-100 rounded-lg">
+						<CardContent className="p-4 sm:p-6">
+						<div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+							<div className="p-2 sm:p-3 bg-orange-100 rounded-lg flex-shrink-0">
 								<svg
-									className="w-6 h-6 text-orange-600"
+									className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -119,9 +119,9 @@ function RouteComponent() {
 									/>
 								</svg>
 							</div>
-							<h2 className="text-2xl font-bold text-gray-900">Modern</h2>
+							<h2 className="text-xl sm:text-2xl font-bold text-gray-900">Modern</h2>
 						</div>
-						<p className="text-gray-600">
+						<p className="text-sm sm:text-base text-gray-600">
 							Built with the latest technologies: React, TypeScript, TanStack,
 							and Tailwind CSS.
 						</p>
@@ -130,15 +130,15 @@ function RouteComponent() {
 				</div>
 
 				<Card>
-					<CardContent className="p-8">
-					<h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
-					<p className="text-gray-600 leading-relaxed mb-4">
+					<CardContent className="p-4 sm:p-6 md:p-8">
+					<h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Mission</h2>
+					<p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-3 sm:mb-4">
 						WaveFeed is designed to be a platform where developers can freely
 						share their thoughts, projects, and experiences. We believe in
 						fostering a supportive community that encourages learning and
 						collaboration.
 					</p>
-					<p className="text-gray-600 leading-relaxed">
+					<p className="text-sm sm:text-base text-gray-600 leading-relaxed">
 						Whether you're a beginner just starting your coding journey or an
 						experienced developer looking to share your expertise, WaveFeed
 						provides the tools and community you need to grow.

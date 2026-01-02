@@ -105,18 +105,18 @@ const Register = () => {
 	};
 
 	return (
-		<div className="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
+		<div className="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-6 sm:py-12 px-4">
 			<div className="w-full max-w-md">
 				<Card className="shadow-xl border-gray-100">
-					<CardHeader className="text-center">
-						<CardTitle className="text-3xl font-bold text-gray-900 mb-2">
+					<CardHeader className="text-center px-4 sm:px-6 pt-4 sm:pt-6">
+						<CardTitle className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
 							Create Account
 						</CardTitle>
-						<CardDescription className="text-base">
+						<CardDescription className="text-sm sm:text-base">
 							Sign up to get started
 						</CardDescription>
 					</CardHeader>
-					<CardContent>
+					<CardContent className="px-4 sm:px-6 pb-4 sm:pb-6">
 						<form onSubmit={handleSubmit} className="space-y-5">
 							<div>
 								<Label htmlFor="name" className="mb-2">

@@ -10,24 +10,24 @@ export const Route = createFileRoute('/contacts')({
 
 function RouteComponent() {
 	return (
-		<div className="min-h-full bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-12">
+		<div className="min-h-full bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-6 sm:py-12">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold text-gray-900 mb-4">
+				<div className="text-center mb-8 sm:mb-12">
+					<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
 						Get in Touch
 					</h1>
-					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
+					<p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
 						Have a question or want to collaborate? We'd love to hear from you!
 					</p>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8 mb-12">
+				<div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
 					<Card>
-						<CardContent className="p-8">
-						<div className="flex items-center gap-4 mb-6">
-							<div className="p-4 bg-blue-100 rounded-lg">
+						<CardContent className="p-4 sm:p-6 md:p-8">
+						<div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+							<div className="p-3 sm:p-4 bg-blue-100 rounded-lg flex-shrink-0">
 								<svg
-									className="w-8 h-8 text-blue-600"
+									className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-600"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -41,20 +41,20 @@ function RouteComponent() {
 								</svg>
 							</div>
 							<div>
-								<h3 className="text-xl font-bold text-gray-900">Email</h3>
-								<p className="text-gray-600">Send us an email</p>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900">Email</h3>
+								<p className="text-sm sm:text-base text-gray-600">Send us an email</p>
 							</div>
 						</div>
-						<p className="text-blue-600 font-medium">support@wavefeed.com</p>
+						<p className="text-sm sm:text-base text-blue-600 font-medium break-all">support@wavefeed.com</p>
 						</CardContent>
 					</Card>
 
 					<Card>
-						<CardContent className="p-8">
-						<div className="flex items-center gap-4 mb-6">
-							<div className="p-4 bg-green-100 rounded-lg">
+						<CardContent className="p-4 sm:p-6 md:p-8">
+						<div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+							<div className="p-3 sm:p-4 bg-green-100 rounded-lg flex-shrink-0">
 								<svg
-									className="w-8 h-8 text-green-600"
+									className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-green-600"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -68,20 +68,20 @@ function RouteComponent() {
 								</svg>
 							</div>
 							<div>
-								<h3 className="text-xl font-bold text-gray-900">Discord</h3>
-								<p className="text-gray-600">Join our community</p>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900">Discord</h3>
+								<p className="text-sm sm:text-base text-gray-600">Join our community</p>
 							</div>
 						</div>
-						<p className="text-green-600 font-medium">discord.gg/wavefeed</p>
+						<p className="text-sm sm:text-base text-green-600 font-medium break-all">discord.gg/wavefeed</p>
 						</CardContent>
 					</Card>
 
 					<Card>
-						<CardContent className="p-8">
-						<div className="flex items-center gap-4 mb-6">
-							<div className="p-4 bg-purple-100 rounded-lg">
+						<CardContent className="p-4 sm:p-6 md:p-8">
+						<div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+							<div className="p-3 sm:p-4 bg-purple-100 rounded-lg flex-shrink-0">
 								<svg
-									className="w-8 h-8 text-purple-600"
+									className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-purple-600"
 									fill="currentColor"
 									viewBox="0 0 24 24"
 								>
@@ -89,20 +89,20 @@ function RouteComponent() {
 								</svg>
 							</div>
 							<div>
-								<h3 className="text-xl font-bold text-gray-900">GitHub</h3>
-								<p className="text-gray-600">Check out our code</p>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900">GitHub</h3>
+								<p className="text-sm sm:text-base text-gray-600">Check out our code</p>
 							</div>
 						</div>
-						<p className="text-purple-600 font-medium">github.com/wavefeed</p>
+						<p className="text-sm sm:text-base text-purple-600 font-medium break-all">github.com/wavefeed</p>
 						</CardContent>
 					</Card>
 
 					<Card>
-						<CardContent className="p-8">
-						<div className="flex items-center gap-4 mb-6">
-							<div className="p-4 bg-blue-100 rounded-lg">
+						<CardContent className="p-4 sm:p-6 md:p-8">
+						<div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+							<div className="p-3 sm:p-4 bg-blue-100 rounded-lg flex-shrink-0">
 								<svg
-									className="w-8 h-8 text-blue-600"
+									className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-600"
 									fill="currentColor"
 									viewBox="0 0 24 24"
 								>
@@ -110,55 +110,57 @@ function RouteComponent() {
 								</svg>
 							</div>
 							<div>
-								<h3 className="text-xl font-bold text-gray-900">LinkedIn</h3>
-								<p className="text-gray-600">Connect with us</p>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900">LinkedIn</h3>
+								<p className="text-sm sm:text-base text-gray-600">Connect with us</p>
 							</div>
 						</div>
-						<p className="text-blue-600 font-medium">linkedin.com/company/wavefeed</p>
+						<p className="text-sm sm:text-base text-blue-600 font-medium break-all">linkedin.com/company/wavefeed</p>
 						</CardContent>
 					</Card>
 				</div>
 
 				<Card>
-					<CardContent className="p-8">
-						<h2 className="text-2xl font-bold text-gray-900 mb-6">
+					<CardContent className="p-4 sm:p-6 md:p-8">
+						<h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
 							Send us a Message
 						</h2>
-						<form className="space-y-6">
+						<form className="space-y-4 sm:space-y-6">
 							<div>
-								<Label htmlFor="contact-name" className="mb-2">
+								<Label htmlFor="contact-name" className="mb-2 text-sm sm:text-base">
 									Name
 								</Label>
 								<Input
 									id="contact-name"
 									type="text"
 									placeholder="Your name"
+									className="text-sm sm:text-base"
 								/>
 							</div>
 							<div>
-								<Label htmlFor="contact-email" className="mb-2">
+								<Label htmlFor="contact-email" className="mb-2 text-sm sm:text-base">
 									Email
 								</Label>
 								<Input
 									id="contact-email"
 									type="email"
 									placeholder="your.email@example.com"
+									className="text-sm sm:text-base"
 								/>
 							</div>
 							<div>
-								<Label htmlFor="contact-message" className="mb-2">
+								<Label htmlFor="contact-message" className="mb-2 text-sm sm:text-base">
 									Message
 								</Label>
 								<textarea
 									id="contact-message"
 									rows={5}
-									className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
+									className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm sm:text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
 									placeholder="Your message..."
 								/>
 							</div>
 							<Button
 								type="submit"
-								className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-[1.02]"
+								className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-[1.02] text-sm sm:text-base"
 							>
 								Send Message
 							</Button>

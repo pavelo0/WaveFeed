@@ -8,9 +8,10 @@ import { Button } from './ui/button';
 
 type PostProps = {
 	post: PostType;
+	showCommentsButton?: boolean;
 };
 
-const Post = ({ post }: PostProps) => {
+const Post = ({ post, showCommentsButton = true }: PostProps) => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const { id, title, body, tags, reactions, views } = post;
@@ -152,28 +153,30 @@ const Post = ({ post }: PostProps) => {
 				</div>
 
 				<div className="flex items-center gap-2">
-					<Button
-						variant="ghost"
-						size="sm"
-						onClick={handleComments}
-						className="text-gray-600 hover:text-blue-600"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="18"
-							height="18"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							className="mr-1"
+					{showCommentsButton && (
+						<Button
+							variant="ghost"
+							size="sm"
+							onClick={handleComments}
+							className="text-gray-600 hover:text-blue-600"
 						>
-							<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-						</svg>
-						Comments
-					</Button>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								className="mr-1"
+							>
+								<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+							</svg>
+							Comments
+						</Button>
+					)}
 
 					<Button
 						variant="ghost"

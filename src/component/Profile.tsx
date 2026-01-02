@@ -19,10 +19,10 @@ const Profile = () => {
 	if (!currentUser) {
 		return (
 			<div className="min-h-full">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-					<h1 className="text-3xl font-bold mb-4">Profile</h1>
-					<div className="bg-white shadow rounded-lg p-6">
-						<p className="text-gray-500">Please log in to view your profile.</p>
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+					<h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Profile</h1>
+					<div className="bg-white shadow rounded-lg p-4 sm:p-6">
+						<p className="text-sm sm:text-base text-gray-500 text-center sm:text-left">Please log in to view your profile.</p>
 					</div>
 				</div>
 			</div>
@@ -31,25 +31,25 @@ const Profile = () => {
 
 	return (
 		<div className="min-h-full">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-				<h1 className="text-3xl font-bold mb-4">Profile</h1>
-				<div className="bg-white shadow rounded-lg p-6 mb-6">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+				<h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Profile</h1>
+				<div className="bg-white shadow rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
 					<div className="flex items-center mb-4">
-						<div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center">
-							<span className="text-gray-500 text-2xl">
+						<div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+							<span className="text-gray-500 text-xl sm:text-2xl">
 								{currentUser.name.charAt(0).toUpperCase()}
 							</span>
 						</div>
-						<div className="ml-4">
-							<h2 className="text-xl font-bold">{currentUser.name}</h2>
-							<p className="text-gray-500">{currentUser.email}</p>
-							<p className="text-sm text-gray-400">@{currentUser.username}</p>
+						<div className="ml-3 sm:ml-4 min-w-0">
+							<h2 className="text-lg sm:text-xl font-bold truncate">{currentUser.name}</h2>
+							<p className="text-sm sm:text-base text-gray-500 truncate">{currentUser.email}</p>
+							<p className="text-xs sm:text-sm text-gray-400">@{currentUser.username}</p>
 						</div>
 					</div>
 				</div>
 
 				<div>
-					<h2 className="text-2xl font-bold mb-4">
+					<h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
 						Favorite Posts ({favoritePosts.length})
 					</h2>
 					{favoritePosts.length > 0 ? (
@@ -58,6 +58,7 @@ const Profile = () => {
 								<Post
 									key={post.id}
 									post={post}
+									showCommentsButton={false}
 								/>
 							))}
 						</div>

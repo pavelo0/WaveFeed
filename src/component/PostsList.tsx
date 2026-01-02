@@ -24,6 +24,7 @@ const PostsList = () => {
 				<Post
 					key={post.id}
 					post={post}
+					showCommentsButton={false}
 				/>
 			))}
 		</div>
