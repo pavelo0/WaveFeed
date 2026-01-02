@@ -53,7 +53,8 @@ function PostDetailPage() {
 		navigate({
 			to: '/posts/$id',
 			params: { id },
-			search: newShowComments ? { comments: true } : { comments: false }
+			search: newShowComments ? { comments: true } : { comments: false },
+			replace: true
 		});
 	};
 
